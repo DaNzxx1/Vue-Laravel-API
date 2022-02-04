@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\homeController;
 use App\Http\Controllers\listController;
+use App\Http\Controllers\ClientsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/ping', function(){return 'pong';});
+
+Route::get('/home', [homeController::class, 'index']);
+
+Route::get('/clients/list', [ClientsController::class, 'all']);
+Route::post('/clients/adicionar', [ClientsController::class, 'add']);
+Route::get('/clients/edit/{client}', [ClientsController::class, 'serchID']);
+Route::put('/clients/update/{client}', [ClientsController::class, 'update']);
+Route::delete('/clients/delete/{client}', [ClientsController::class, 'delete']);
 
 Route::get('/lista', [listController::class, 'listagem']);
 Route::post('/adicionar', [listController::class, 'adicionar']);

@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar">
+    <div class="navbar d-flex justify-content-between align-items-center px-3">
         <h3 class="logo"><i class="fa fa-star"></i> Logo Marca </h3>
         <a class="logout" @click.prevent="logout" href="#"> Sair <i class="fas fa-sign-out-alt"></i></a>
     </div>

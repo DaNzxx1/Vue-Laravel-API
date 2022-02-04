@@ -11,7 +11,7 @@
     .content-login {
         width: 400px;
         height: 450px;
-        background-color: $purple;
+        background-color: $main-color;
         border-radius: 7px;
         display: flex;
         flex-direction: column;
@@ -24,7 +24,7 @@
             justify-content: center;
     
             h1 {
-                color: $white;
+                color: $text-color;
                 font-size: 28px;
             }
         }

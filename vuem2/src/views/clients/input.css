@@ -15,4 +15,8 @@
   min-height: 100vh;
   background-color: #e1ddf4;
 }
+
+.card {
+  min-height: 100%;
+}
 /*# sourceMappingURL=input.css.map */

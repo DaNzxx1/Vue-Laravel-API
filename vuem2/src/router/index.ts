@@ -1,11 +1,13 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-import list from '../views/list.vue'
-import edit from '../views/edit.vue'
-import LoginComponent from '../views/login/LoginComponent.vue'
-import HomeComponent from '../views/home/HomeComponent.vue'
-import ListComponent from '../views/list/ListComponent.vue'
+import list from '../views/list.vue';
+import edit from '../views/edit.vue';
+import LoginComponent from '../views/login/LoginComponent.vue';
+import HomeComponent from '../views/home/HomeComponent.vue';
+import ListComponent from '../views/list/ListComponent.vue';
+import ClientsComponent from '../views/clients/ClientsComponent.vue';
+import EditClientsComponent from '../views/clients/EditClientsComponent.vue';
 
 Vue.use(VueRouter);
 
@@ -48,6 +50,21 @@ const routes: Array<RouteConfig> = [
     path: '/list',
     name: 'List',
     component: ListComponent,
+  },
+  {
+    path: '/clients',
+    name: 'Clients',
+    component: ClientsComponent,
+  },
+  {
+    path: '/clients/edit/:client',
+    name: 'ClientsEdit',
+    component: EditClientsComponent,
+  },
+  {
+    path: '/clients/edit',
+    name: 'ClientsNew',
+    component: EditClientsComponent,
   },
 ];
 

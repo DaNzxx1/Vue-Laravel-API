@@ -4,9 +4,9 @@
             <SidebarComponent />
         </div>
         <div class="content-right">
-            <div class="navbar">
+            <!-- <div class="navbar">
                 <NavbarComponent />
-            </div>
+            </div> -->
             <div class="pages">
                 <slot name="slot-pages"></slot>
             </div>
@@ -16,14 +16,14 @@
 
 <script>
     import SidebarComponent from './components/SidebarComponent';
-    import NavbarComponent from './components/NavbarComponent';
+   /*  import NavbarComponent from './components/NavbarComponent'; */
 
     export default {
         name: 'DashboardComponent',
 
         components: {
             SidebarComponent,
-            NavbarComponent,
+            /* NavbarComponent, */
         }
     }
 </script>

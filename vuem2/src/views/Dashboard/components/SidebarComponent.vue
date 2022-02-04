@@ -1,57 +1,112 @@
 <template>
-    <div class="sidebar">
-        <div class="top mt-5 d-flex flex-column justify-content-center align-items-center w-100">
-            <div class="avatar d-flex justify-content-center align-items-center rounded-circle">
-                <span><i class="fa fa-user fa-3x"></i></span>
+    <nav class="sidebar-nav close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <i class="fa fa-user fa-2x text-light"></i>
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">CodingLab</span>
+                    <span class="profession">Web Developer</span>
+                </div>
             </div>
-            <div class="info text-light mt-2 text-start">
-                <p class="name fs-4">Danilo Lourenço</p>
-                <p class="status fs-6"><i class="fas fa-circle text-success"></i> Online</p>
+            
+            <a href="#" @click.prevent="toggle"><i class="fas fa-chevron-right toggle"></i></a>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <a class="router-link" >
+                        <i class="fa fa-search icon"></i>
+                        <input type="serch" placeholder="Search...">
+                    </a>
+                </li>
+                <ul class="menus-links">
+                    <li class="nav-link">
+                        <router-link class="router-link" :to="{name: 'Homea'}">
+                            <i class="fa fa-home icon"></i>
+                            <span class="text nav-text">Início</span>
+                        </router-link>
+                    </li>
+                    <li class="nav-link">
+                        <router-link class="router-link" :to="{name: 'Clients'}">
+                            <i class="fa fa-box icon"></i>
+                            <span class="text nav-text">Clientes</span>
+                        </router-link>
+                    </li>
+                    <li class="nav-link">
+                        <router-link class="router-link" :to="{name: 'List'}">
+                            <i class="fa fa-store icon"></i>
+                            <span class="text nav-text">Lista</span>
+                        </router-link>
+                    </li>
+                    <li class="nav-link">
+                        <router-link class="router-link" :to="{name: 'Homea'}">
+                            <i class="fa fa-chart-bar icon"></i>
+                            <span class="text nav-text">Vendas</span>
+                        </router-link>
+                    </li>
+                    <li class="nav-link">
+                        <router-link class="router-link" :to="{name: 'Homea'}">
+                            <i class="fa fa-home icon"></i>
+                            <span class="text nav-text">Relatórios</span>
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a class="router-link" @click.prevent="logout" href="#">
+                        <i class="fa fa-sign-out-alt icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class="fa fa-moon icon moon"></i>
+                        <i class="fa fa-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch" @click.prevent="theme">
+                        <span class="switch"></span>
+                    </div>
+                </li>
             </div>
         </div>
-        <div class="d-flex justify-content-center">
-            <div class="menu mt-5 text-start">
-                <li class="pb-2"><router-link class="menus" :to="{name: 'Homea'}"><i class="fa fa-home"></i> Início</router-link></li>
-                <li class="pb-2"><router-link class="menus" :to="{name: 'List'}"><i class="fa fa-box"></i> Lista</router-link></li>
-                <li class="pb-2"><router-link class="menus" :to="{name: 'Homea'}"><i class="fa fa-store"></i> Vendas</router-link></li>
-                <li class="pb-2"><router-link class="menus" :to="{name: 'Homea'}"><i class="fa fa-chart-bar"></i> Relatórios</router-link></li>
-            </div>
-        </div>
-    </div>
+    </nav>
 </template>
 
 <script>
     export default {
-        name: 'SidebarComponent'
+        name: 'SidebarComponent',
+
+        methods: {
+            logout() {
+                this.$router.push({name: 'Login'});
+            },
+            theme() {
+                const theme = document.querySelector('body');
+                theme  .classList.toggle("dark");
+                /* alert('aaa'); */
+
+                const modeText = document.querySelector(".mode-text")
+                if (theme.classList.contains("dark")) {
+                    modeText.innerText = "Light Mode";   
+                } else {
+                    modeText.innerText = "Dark Mode"; 
+                }
+            },
+            toggle() {
+                const sidebar_nav = document.querySelector('.sidebar-nav');
+                sidebar_nav.classList.toggle("close");
+                /* alert('aaa'); */
+            },
+        },
     }
 </script>
 
-<style scoped>
-    * {
-        text-decoration: none;
-        list-style: none;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    .sidebar .top {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sidebar .top .avatar {
-        width: 80px;
-        height: 80px;
-        background-color: #CCC;
-    }
-
-    .sidebar .menu .menus {
-        font-size: 22px;
-        color: white;
-    }
-</style>
+<style src="./input.css" scoped/>

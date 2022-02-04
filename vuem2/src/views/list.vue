@@ -37,7 +37,7 @@
           <td>{{ user.nome }}</td>
           <td>{{ user.email }}</td>
           <td>
-            <router-link :to="{name:'editar', params:{usuario:user.id}}">
+            <router-link :to="{name:'Editar', params:{usuario:user.id}}">
               <b-button variant="outline-primary">Editar</b-button>
             </router-link>
           </td>

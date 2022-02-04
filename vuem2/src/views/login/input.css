@@ -1,3 +1,5 @@
+/* ==== Colors ==== */
+/* ==== Transition ==== */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
 .main {
   display: -webkit-box;
@@ -5,10 +7,13 @@
   display: flex;
   height: 100vh;
   font-family: 'Roboto', 'sans-serif';
+  background-color: #e1ddf4;
 }
 
 .content-pages {
   padding: 15px;
+  min-height: 100vh;
+  background-color: #e1ddf4;
 }
 
 .login {
@@ -28,7 +33,7 @@
 .login .content-login {
   width: 400px;
   height: 450px;
-  background-color: #8D86F4;
+  background-color: #6f00ff;
   border-radius: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
