@@ -44,6 +44,7 @@
         },
         update() {
           var data = {name:this.nome, email:this.email}
+          console.log(data);
 
           this.$http.put(`update/${this.$route.params.usuario}`, data).then((response) => {
             console.log(response)

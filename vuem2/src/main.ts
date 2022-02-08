@@ -7,16 +7,6 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import './plugins/axios'
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
-/* import 'datatables.net-bs5';
-import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css';
-import 'jszip';
-import 'pdfmake';
-import 'datatables.net-buttons-bs5';
-import 'datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css';
-import 'datatables.net-buttons/js/buttons.colVis';
-import 'datatables.net-buttons/js/buttons.flash';
-import 'datatables.net-buttons/js/buttons.html5';
-import 'datatables.net-buttons/js/buttons.print'; */
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
