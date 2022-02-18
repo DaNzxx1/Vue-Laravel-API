@@ -15,18 +15,19 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('cpf')->unique();
-            $table->string('email')->unique();
-            $table->string('phone');
+            $table->string('name', 45);
+            $table->string('cpf', 14)->unique();
+            $table->string('email', 45)->unique();
+            $table->string('phone', 17);
             $table->char('sex', 1);
-            $table->string('address');
-            $table->string('city');
+            $table->string('cep', 9);
+            $table->string('address', 45);
+            $table->string('complement', 45);
+            $table->string('city', 20);
             $table->date('date_birth');
             $table->integer('stats');
             $table->softDeletes();
             $table->timestamps();
-            $table->renameColumn('sex', 'to');
         });
     }
 

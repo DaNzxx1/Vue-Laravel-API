@@ -56,6 +56,7 @@
                                 <b-th>{{columnsName[2]}}</b-th>
                                 <b-th>{{columnsName[3]}}</b-th>
                                 <b-th>{{columnsName[4]}}</b-th>
+                                <b-th>{{columnsName[5]}}</b-th>
                             </b-tr>
                         </b-thead>
                         <b-tbody>
@@ -64,6 +65,7 @@
                                 <b-td>{{client.name}}</b-td>
                                 <b-td>{{client.cpf}}</b-td>
                                 <b-td>{{client.email}}</b-td>
+                                <b-td>{{client.phone}}</b-td>
                                 <b-td>
                                     <router-link :to="{name:'ClientsEdit', params:{client:client.id}}">
                                         <b-button pill class="me-2" variant="outline-primary"><i class="fa fa-edit"></i></b-button>

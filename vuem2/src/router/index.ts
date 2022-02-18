@@ -62,7 +62,7 @@ const routes: Array<RouteConfig> = [
     component: EditClientsComponent,
   },
   {
-    path: '/clients/edit',
+    path: '/clients/add',
     name: 'ClientsNew',
     component: EditClientsComponent,
   },
