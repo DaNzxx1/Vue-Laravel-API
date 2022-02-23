@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ClientsController extends Controller
 {
-    public function all(Request $request)
+    public function all()
     {
         $clients = Clients::all();
 
@@ -37,11 +37,9 @@ class ClientsController extends Controller
         }
     }
 
-    public function delete(Clients $client, Request $request) 
+    public function show(Clients $client, Request $request)
     {
-        $client->delete();
-
-        return response()->json('success');
+        return response()->json($client);
     }
 
     public function serchID(Clients $client, Request $request)
@@ -51,7 +49,7 @@ class ClientsController extends Controller
 
     public function update(Clients $client, ClientUpdateRequest $request)
     {
-        if($request->validated()) {
+        if ($request->validated()) {
             $client->name = $request->name;
             $client->email = $request->email;
             $client->date_birth = $request->date_birth;
@@ -69,4 +67,10 @@ class ClientsController extends Controller
         }
     }
     
+    public function delete(Clients $client, Request $request) 
+    {
+        if ($client->delete()) {
+            return response()->json('success');
+        }
+    }
 }
