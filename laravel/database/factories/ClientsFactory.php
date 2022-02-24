@@ -15,7 +15,7 @@ class ClientsFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'cpf' => $this->faker->numerify('###########'),
+            'cpf' => $this->faker->cpf(),
             'email' => $this->faker->freeEmail(),
             'phone' => $this->faker->numerify('##########'),
             'sex' => $this->faker->numberBetween(0, 2),

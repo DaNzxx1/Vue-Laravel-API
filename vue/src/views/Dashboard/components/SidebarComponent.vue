@@ -7,7 +7,7 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">Dot.Lib</span>
+                    <span class="name">Dev.Junior</span>
                     <span class="profession">Danilo Lourenço</span>
                 </div>
             </div>

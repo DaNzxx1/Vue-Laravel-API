@@ -23,7 +23,7 @@ class CreateClientsTable extends Migration
             $table->string('cep', 9);
             $table->string('address', 45);
             $table->string('complement', 45);
-            $table->string('city', 20);
+            $table->string('city', 40);
             $table->date('date_birth');
             $table->integer('stats');
             $table->timestamps();
